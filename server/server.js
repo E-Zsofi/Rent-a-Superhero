@@ -6,9 +6,9 @@ const app = express();
 app.use(express.json());
 
 
-async function findHeroById() {
+async function findHero() {
   try {
-    const hero = await Hero.find({ name: 'Iron Man' });
+    const hero = await Hero.find({ id: 21 });
     console.log(hero);
   } catch (error) {
     console.error(error);
@@ -20,7 +20,7 @@ async function findHeroById() {
 
 async function main() {
   await mongoose.connect('mongodb+srv://bencematuz1:Hero12345@rentahero.rvghajp.mongodb.net/Superheros');
-  findHeroById();
+  findHero();
 
 
   app.listen(3000, () => {
