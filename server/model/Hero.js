@@ -7,7 +7,7 @@ const heroSchema = new Schema({
   description: String,
   pictureUrl: String,
   abilities: [String],
-});
+}, { collection: 'heroes' });
 
 const Hero = model('Hero', heroSchema);
 export default Hero;
