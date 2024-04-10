@@ -1,16 +1,16 @@
-import logo1 from "./logo1.jpg";
+import logo3 from "./logo3.png";
 import { Link } from "react-router-dom";
+import "./Header.css"
 
 function Header() {
   return (
     <header>
-      <div className="logo">
-        <img src={logo1} alt="Business Logo" />
+      <div>
+        <img className="logo" src={logo3} alt="Business Logo" />
       </div>
       <nav>
-        <ul>
           <p>
-            <Link to="/admin">Home</Link>
+            <Link to="/admin/home">Home</Link>
           </p>
           <p>
             <Link to="/admin">Contact info</Link>
@@ -21,7 +21,6 @@ function Header() {
           <p>
             <Link to="/admin">Superheroes</Link>
           </p>
-        </ul>
       </nav>
     </header>
   );
