@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import Header from "./Header";
 
 
 function Admin() {
@@ -18,6 +18,7 @@ function Admin() {
   return (
     <>
       <div>
+        <Header></Header>
         {allHeroes.map((hero) => (
           <ul key={hero.id}>
           <li key={hero.id}>{hero.name}</li>
