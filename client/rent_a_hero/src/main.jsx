@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom/client'
 import './index.css';
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Welcome from './assets/pages/Welcome.jsx';
+import User from './Pages/User/User.jsx';
 
-const router = createBrowserRouter([{path: '/welcome', element: <Welcome/>}])
+const router = createBrowserRouter([{path: '/User', element: <User/>}])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App/>
+    <User router={router}/>
   </React.StrictMode>,
 )
 
