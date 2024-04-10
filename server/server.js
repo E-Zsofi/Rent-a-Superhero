@@ -6,21 +6,30 @@ const app = express();
 app.use(express.json());
 
 
-async function findHero() {
-  try {
-    const hero = await Hero.find({ id: 21 });
-    console.log(hero);
-  } catch (error) {
-    console.error(error);
-  }
-}
+// async function findHeroById() {
+//   try {
+//     const hero = await Hero.find({ name: 'Iron Man' });
+//     console.log(hero);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
 
 
 
 async function main() {
   await mongoose.connect('mongodb+srv://bencematuz1:Hero12345@rentahero.rvghajp.mongodb.net/Superheros');
-  findHero();
+  // findHeroById();
+  app.get("/api/hero", async (req, res) => {
+    const allHeroes = await Hero.find({});
+    res.json(allHeroes);
+  })
+  
+  app.get("/api/shop", async (req, res) => {
+    const allHeroes = await Hero.find({});
+    res.json(allHeroes);
+  })
 
 
   app.listen(3000, () => {
