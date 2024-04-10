@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     async function fetchSuperheroes() {
-      const response = await fetch("/api/admin");
+      const response = await fetch("/api/hero");
       const data = await response.json();
       setAllHeroes(data);
       console.log(data);

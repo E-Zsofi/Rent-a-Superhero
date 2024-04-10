@@ -21,7 +21,7 @@ app.use(express.json());
 async function main() {
   await mongoose.connect('mongodb+srv://bencematuz1:Hero12345@rentahero.rvghajp.mongodb.net/Superheros');
   // findHeroById();
-  app.get("/api/admin", async (req, res) => {
+  app.get("/api/hero", async (req, res) => {
     const allHeroes = await Hero.find({});
     res.json(allHeroes);
   })
