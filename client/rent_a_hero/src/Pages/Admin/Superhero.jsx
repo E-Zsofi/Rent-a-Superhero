@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import "./Admin.css";
+
 
 function Admin() {
   const [allHeroes, setAllHeroes] = useState([]);
