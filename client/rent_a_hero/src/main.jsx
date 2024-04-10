@@ -1,14 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css';
+import  Admin  from "./Pages/Admin.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Welcome from './assets/pages/Welcome.jsx';
 
-const router = createBrowserRouter([{path: '/welcome', element: <Welcome/>}])
+const router = createBrowserRouter([
+  {path: '/admin', 
+  element: <Admin/>}])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App/>
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )
 
