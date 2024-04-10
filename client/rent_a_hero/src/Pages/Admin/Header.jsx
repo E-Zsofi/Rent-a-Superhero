@@ -1,30 +1,30 @@
-import React from "react";
+import logo1 from "./logo1.jpg";
+import { Link } from "react-router-dom";
 
-function Header () {
-
-    return (
-        <header>
-            <div className="logo">
-                <img src="rent_a_hero.webp" alt="Business Logo"/>
-            </div>
-            <nav>
-                <ul>
-                    <li>
-                        Home
-                    </li>
-                    <li>
-                        Contact info
-                    </li>
-                    <li>
-                        About us
-                    </li>
-                    <li>
-                        Superheroes
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    )
+function Header() {
+  return (
+    <header>
+      <div className="logo">
+        <img src={logo1} alt="Business Logo" />
+      </div>
+      <nav>
+        <ul>
+          <p>
+            <Link to="/admin">Home</Link>
+          </p>
+          <p>
+            <Link to="/admin">Contact info</Link>
+          </p>
+          <p>
+            <Link to="/admin/about">About us</Link>
+          </p>
+          <p>
+            <Link to="/admin">Superheroes</Link>
+          </p>
+        </ul>
+      </nav>
+    </header>
+  );
 }
 
-export default Header
+export default Header;

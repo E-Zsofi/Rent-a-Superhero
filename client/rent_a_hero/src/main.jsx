@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css';
-import  Admin  from "./Pages/Admin/Superhero.jsx";
+import  HomePage  from "./Pages/Admin/HomePage.jsx";
 import About_us from "./Pages/Admin/About_us.jsx"
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
   path: '/admin', 
-  element: <Admin/>
+  element: <HomePage/>
 },
 {
   path: '/admin/about',
