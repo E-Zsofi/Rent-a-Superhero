@@ -8,7 +8,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import User from "./Pages/User/User.jsx";
 
 const router = createBrowserRouter([
-  { path: "/welcome", element: <Welcome /> },
   {
     path: "/admin",
     element: <HomePage />,

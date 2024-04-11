@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import Header from "./Header";
+import "./Superhero.css";
+
+
 
 
 function ShowSuperheroes() {
@@ -10,7 +13,6 @@ function ShowSuperheroes() {
       const response = await fetch("/api/hero");
       const data = await response.json();
       setAllHeroes(data);
-      console.log(data);
     }
     fetchSuperheroes();
   }, []);
@@ -19,13 +21,18 @@ function ShowSuperheroes() {
     <>
       <div>
         <Header></Header>
+        <div className="heroes">
+
         {allHeroes.map((hero) => (
-          <ul key={hero.id}>
-          <li key={hero.id}>{hero.name}</li>
-          <li>{hero.description}</li>
-          </ul>
+          <div key={hero.id} className="HeroContainer">
+            <p key={hero.id}>{hero.name}</p>
+            <img src={hero.pictureUrl}></img>
+            <p>{hero.description}</p>
+          </div>
         ))}
-      </div>
+        </div>
+
+        </div>
     </>
   );
 }
