@@ -68,4 +68,14 @@ header {
   font-family: "Tilt Neon", sans-serif;
 
 }
+ul{
+  list-style-type: none;
+  font-weight: bolder;
+}
+li{
+  font-weight: lighter;
+}
+p{
+  font-weight: bolder;
+}
 
