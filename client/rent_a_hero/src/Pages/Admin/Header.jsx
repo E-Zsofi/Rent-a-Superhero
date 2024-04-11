@@ -19,7 +19,7 @@ function Header() {
             <Link to="/admin/about">About us</Link>
           </p>
           <p>
-            <Link to="/admin">Contact info</Link>
+            <Link to="/admin/contacts">Contact info</Link>
           </p>
       </nav>
     </header>

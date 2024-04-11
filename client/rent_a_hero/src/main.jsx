@@ -6,6 +6,8 @@ import About_us from "./Pages/Admin/About_us.jsx";
 import Superhero from "./Pages/Admin/Superhero.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import User from "./Pages/User/User.jsx";
+import ContactUs from "./Pages/Admin/ContactUs.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/admin/superheroes",
     element: <Superhero />,
+  },
+  {
+    path: "/admin/contacts",
+    element: <ContactUs />,
   },
   { path: "/User", element: <User /> },
 ]);
