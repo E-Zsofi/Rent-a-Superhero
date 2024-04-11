@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "./Header";
 
 
-function Admin() {
+function ShowSuperheroes() {
   const [allHeroes, setAllHeroes] = useState([]);
 
   useEffect(() => {
@@ -30,4 +30,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default ShowSuperheroes;

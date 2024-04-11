@@ -16,8 +16,6 @@ app.use(express.json());
 // }
 
 
-
-
 async function main() {
   await mongoose.connect('mongodb+srv://bencematuz1:Hero12345@rentahero.rvghajp.mongodb.net/Superheros');
   // findHeroById();
@@ -31,7 +29,6 @@ async function main() {
     res.json(allHeroes);
   })
 
-  
 
 
   app.listen(3000, () => {
