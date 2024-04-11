@@ -1,0 +1,32 @@
+body{
+
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+}
+.logo{
+  size: 41px;
+}
+nav{
+  display: flex;
+}
+nav p {
+  margin-right: 120px
+}
+nav p {
+  margin-left: 40px
+}
+header {
+  display: flex;
+  justify-content: center; 
+}
+
+.logo {
+  width: 300px; 
+  height: auto;
+  /* object-fit: cover;
+  mix-blend-mode: darken; */
+  background: transparent;
+}

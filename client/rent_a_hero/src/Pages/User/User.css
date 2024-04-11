@@ -1,3 +1,11 @@
 img{
   height: 200px;
 }
+
+.reg-log-block {
+  text-align: center;
+}
+
+.reg-log-block ul{
+  list-style-type: none;
+}
