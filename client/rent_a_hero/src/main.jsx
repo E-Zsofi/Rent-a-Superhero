@@ -7,6 +7,8 @@ import Superhero from "./Pages/Admin/Superhero.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import User from "./Pages/User/User.jsx";
 import Signup from "./Pages/User/Signup.jsx";
+import ContactUs from "./Pages/Admin/ContactUs.jsx";
+
 
 const router = createBrowserRouter([
   {
