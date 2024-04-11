@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import express from 'express';
 import Hero from "./model/Hero.js";
+import User from "./model/User.js"
 
 const app = express();
 app.use(express.json());
@@ -29,6 +30,22 @@ async function main() {
     res.json(allHeroes);
   })
 
+  app.post("/api/user", async (req, res) => {
+    try {
+      const username = req.body.signupUsername;
+      const email = req.body.signupEmail;
+  
+      const user = new User({
+        username,
+        email,
+      })
+      const createdUser = await user.save();
+      res.json(createdUser);
+      
+    } catch (error) {
+      console.error(error);
+    }
+  })
   app.post("/api/hero", async (req, res) => {
     try{
       const name = req.body.name;

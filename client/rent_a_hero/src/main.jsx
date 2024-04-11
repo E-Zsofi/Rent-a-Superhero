@@ -6,6 +6,7 @@ import About_us from "./Pages/Admin/About_us.jsx";
 import Superhero from "./Pages/Admin/Superhero.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import User from "./Pages/User/User.jsx";
+import Signup from "./Pages/User/Signup.jsx";
 import ContactUs from "./Pages/Admin/ContactUs.jsx";
 
 
@@ -27,10 +28,13 @@ const router = createBrowserRouter([
     element: <Superhero />,
   },
   {
-    path: "/admin/contacts",
-    element: <ContactUs />,
+    path: "/user/signup",
+    element: <Signup/>
   },
-  { path: "/User", element: <User /> },
+  { 
+    path: "/User", 
+    element: <User /> 
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
