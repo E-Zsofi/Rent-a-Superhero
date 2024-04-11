@@ -9,7 +9,7 @@ export default function Signup() {
 
   async function handleSignup(event) {
 
-    //event.preventDefault();
+    event.preventDefault();
     const user = {
       signupUsername,
       signupEmail
