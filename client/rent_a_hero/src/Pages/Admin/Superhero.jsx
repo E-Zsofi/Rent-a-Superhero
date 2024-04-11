@@ -2,11 +2,8 @@ import { useState, useEffect } from "react";
 import Header from "./Header";
 import "./Superhero.css";
 
-
-
 function ShowSuperheroes() {
   const [allHeroes, setAllHeroes] = useState([]);
-  // const [heroId, setHeroId] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [pictureUrl, setPictureUrl] = useState("");
@@ -66,10 +63,6 @@ function ShowSuperheroes() {
     <>
       <div>
         <form onSubmit={handleSubmitNewHero}>
-          {/* <label>
-            Hero Id:
-            <input type="text" value={heroId} onChange={(event => setHeroId(event.target.value))} />
-          </label> */}
           <label>
             Name:
             <input
@@ -146,17 +139,26 @@ function ShowSuperheroes() {
         </form>
         <Header></Header>
         <div className="heroes">
-
-        {allHeroes.map((hero) => (
-          <div key={hero.id} className="HeroContainer">
-            <p key={hero.id}>{hero.name}</p>
-            <img src={hero.pictureUrl}></img>
-            <p>{hero.description}</p>
-          </div>
-        ))}
+          {allHeroes.map((hero) => (
+            <div key={hero.id} className="HeroContainer">
+              <p key={hero.id}>{hero.name}</p>
+              <img src={hero.pictureUrl}></img>
+              <p>Description: {hero.description}</p>
+              <ul>
+                Abilities:
+                {hero.abilities.map((ability) => (
+                  <li key={hero.id}>{ability}</li>
+                ))}
+              </ul>
+              <p>Gender: {hero.gender}</p>
+              <p>Status: {hero.status}</p>
+              <p>Hero Type: {hero.heroType}</p>
+              <p>Rating: {hero.rating}</p>
+              <p>Price: {hero.price}</p>
+            </div>
+          ))}
         </div>
-
-        </div>
+      </div>
     </>
   );
 }
