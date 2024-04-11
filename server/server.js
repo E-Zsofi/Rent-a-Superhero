@@ -29,6 +29,37 @@ async function main() {
     res.json(allHeroes);
   })
 
+  app.post("/api/hero", async (req, res) => {
+    try{
+      const name = req.body.name;
+      const description = req.body.description;
+      const pictureUrl = req.body.pictureUrl;
+      const abilities = req.body.abilities;
+      const gender = req.body.gender;
+      const status = req.body.status;
+      const heroType = req.body.heroType;
+      const rating = req.body.rating;
+      const price = req.body.price;
+      const hero = new Hero({
+        name,
+        description,
+        pictureUrl,
+        abilities,
+        gender,
+        status,
+        heroType,
+        rating,
+        price
+      })
+      const createdHero = await hero.save();
+      res.json(createdHero);
+    }
+    catch (error) {
+      console.error(error);
+    }
+  })
+  
+
 
 
   app.listen(3000, () => {
