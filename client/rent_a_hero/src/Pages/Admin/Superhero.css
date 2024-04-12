@@ -47,10 +47,6 @@ header {
   row-gap: 10px;
 }
 
-@font-face {
-  font-family: "Blackwidow";
-  src: url("BlackWidowMovie-d95Rg.ttf");
-}
 
 @font-face {
   font-family: "Avengers";
@@ -65,8 +61,6 @@ header {
   border: 1px solid #888;
   width: 80%;
   border-radius: 8px;
-  font-family: "Tilt Neon", sans-serif;
-
 }
 ul{
   list-style-type: none;
