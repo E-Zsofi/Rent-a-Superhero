@@ -5,6 +5,7 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: scroll;
+  
 }
 .logo{
   size: 41px;
@@ -20,7 +21,9 @@ nav p {
 }
 header {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
+  font-family: "Avengers";
+  font-size:larger;
 }
 
 .logo {
@@ -30,3 +33,22 @@ header {
   mix-blend-mode: darken; */
   background: transparent;
 }
+
+@font-face {
+  font-family: "Avengers";
+  src: url("AvengeanceHeroicAvengerBoldItalic-R73A.ttf");
+}
+
+@font-face {
+  font-family: "Blackwidow";
+  src: url("BlackWidowMovie-d95Rg.ttf");
+}
+
+.welcome {
+  
+}
+
+h1 {
+  font-family: "Avengers";
+}
+

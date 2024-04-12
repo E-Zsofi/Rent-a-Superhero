@@ -46,6 +46,7 @@ async function main() {
       console.error(error);
     }
   })
+  
   app.post("/api/hero", async (req, res) => {
     try{
       const name = req.body.name;
