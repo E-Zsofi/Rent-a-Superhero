@@ -8,4 +8,9 @@ img{
 
 .reg-log-block ul{
   list-style-type: none;
+  margin: 20px;
+  background-color: rgb(160, 144, 125);
+  height: 50px;
+  width: fit-content;
+  align-content: center;
 }
