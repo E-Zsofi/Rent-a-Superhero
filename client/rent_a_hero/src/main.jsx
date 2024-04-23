@@ -6,6 +6,7 @@ import About_us from "./Pages/Admin/About_us.jsx";
 import Superhero from "./Pages/Admin/Superhero.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import User from "./Pages/User/User.jsx";
+import EditSuperhero from "./Pages/Admin/EditSuperhero.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,14 @@ const router = createBrowserRouter([
     path: "/admin/superheroes",
     element: <Superhero />,
   },
-  { path: "/User", element: <User /> },
+  {
+    path: "/User",
+    element: <User /> 
+  },
+  {
+    path: "/admin/edit/:id",
+    element: <EditSuperhero/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

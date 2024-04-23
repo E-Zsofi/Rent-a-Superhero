@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "./Header";
 import "./Superhero.css";
-import EditField from "./Editfields";
+import { Link } from "react-router-dom";
 
 function ShowSuperheroes() {
   const [allHeroes, setAllHeroes] = useState([]);
@@ -140,22 +140,25 @@ function ShowSuperheroes() {
         </form>
         <Header></Header>
         <div className="heroes">
-          {allHeroes.map((hero) => (
-            <div key={hero.id} className="HeroContainer">
-              <p key={hero.id}>{hero.name}</p>
+          {allHeroes.map((hero, index) => (
+            <div key={index} className="HeroContainer">
+              <p>{hero.name}</p>
               <img src={hero.pictureUrl}></img>
               <p>Description: {hero.description}</p>
               <ul>
                 Abilities:
-                {hero.abilities.map((ability) => (
-                  <li key={hero.id}>{ability}</li>
+                {hero.abilities.map((ability, index) => (
+                  <li key={index}>{ability}</li>
                 ))}
               </ul>
-              <p>Gender: {hero.gender} </p>
-              <p>Status: {hero.status} <EditField allHeroes={[]} /></p>
+              <p>Gender: {hero.gender}</p>
+              <p>Status: {hero.status}</p>
               <p>Hero Type: {hero.heroType}</p>
-              <p>Rating: {hero.rating} <EditField allHeroes={[]}/></p>
-              <p>Price: {hero.price} <EditField allHeroes={[]}/></p>
+              <p>Rating: {hero.rating}</p>
+              <p>Price: {hero.price}</p>
+              <Link to={`/admin/edit/${hero._id}`}>
+              <button>Edit Superhero</button>
+              </Link>
             </div>
           ))}
         </div>

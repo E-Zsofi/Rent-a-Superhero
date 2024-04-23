@@ -14,6 +14,11 @@ async function main() {
     const allHeroes = await Hero.find({});
     res.json(allHeroes);
   })
+
+  app.get("/api/edit/:id", async (req, res) => {
+    const hero = await Hero.findById(req.params.id);
+    res.json(hero);
+  })
   
   app.get("/api/shop", async (req, res) => {
     const allHeroes = await Hero.find({});
