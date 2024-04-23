@@ -6,15 +6,6 @@ const app = express();
 app.use(express.json());
 
 
-// async function findHeroById() {
-//   try {
-//     const hero = await Hero.find({ name: 'Iron Man' });
-//     console.log(hero);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
 
 async function main() {
   await mongoose.connect('mongodb+srv://bencematuz1:Hero12345@rentahero.rvghajp.mongodb.net/Superheros');
@@ -56,6 +47,16 @@ async function main() {
     }
     catch (error) {
       console.error(error);
+    }
+  })
+
+  app.patch("/api/hero/:id", async (req, res) => {
+    try {
+      const updatedHero = await Hero.findByIdAndUpdate(req.params.id, {$set: req.body}, {new:true});
+      res.json(updatedHero)
+    }
+    catch (error) {
+      console.error(error)
     }
   })
   

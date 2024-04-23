@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "./Header";
 import "./Superhero.css";
+import EditField from "./Editfields";
 
 function ShowSuperheroes() {
   const [allHeroes, setAllHeroes] = useState([]);
@@ -150,11 +151,11 @@ function ShowSuperheroes() {
                   <li key={hero.id}>{ability}</li>
                 ))}
               </ul>
-              <p>Gender: {hero.gender}</p>
-              <p>Status: {hero.status}</p>
+              <p>Gender: {hero.gender} </p>
+              <p>Status: {hero.status} <EditField allHeroes={[]} /></p>
               <p>Hero Type: {hero.heroType}</p>
-              <p>Rating: {hero.rating}</p>
-              <p>Price: {hero.price}</p>
+              <p>Rating: {hero.rating} <EditField allHeroes={[]}/></p>
+              <p>Price: {hero.price} <EditField allHeroes={[]}/></p>
             </div>
           ))}
         </div>
