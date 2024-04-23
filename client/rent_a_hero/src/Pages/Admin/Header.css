@@ -39,14 +39,6 @@ header {
   src: url("AvengeanceHeroicAvengerBoldItalic-R73A.ttf");
 }
 
-@font-face {
-  font-family: "Blackwidow";
-  src: url("BlackWidowMovie-d95Rg.ttf");
-}
-
-.welcome {
-  
-}
 
 h1 {
   font-family: "Avengers";
