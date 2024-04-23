@@ -1,6 +1,6 @@
 body{
 
-  background-image: url("background.jpg");
+  background-image: url("/src/Pages/Admin/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
