@@ -9,6 +9,7 @@ import User from "./Pages/User/User.jsx";
 import Signup from "./Pages/User/Signup.jsx";
 import ContactUs from "./Pages/Admin/ContactUs.jsx";
 
+import EditSuperhero from "./Pages/Admin/EditSuperhero.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
     path: "/User", 
     element: <User /> 
   },
+  {
+    path: "/admin/edit/:id",
+    element: <EditSuperhero/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

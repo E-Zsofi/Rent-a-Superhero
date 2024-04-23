@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "./Header";
 import "./Superhero.css";
+import { Link } from "react-router-dom";
 
 function ShowSuperheroes() {
   const [allHeroes, setAllHeroes] = useState([]);
@@ -155,6 +156,9 @@ function ShowSuperheroes() {
               <p>Hero Type: {hero.heroType}</p>
               <p>Rating: {hero.rating}</p>
               <p>Price: {hero.price}</p>
+              <Link to={`/admin/edit/${hero._id}`}>
+              <button>Edit Superhero</button>
+              </Link>
             </div>
           ))}
         </div>
