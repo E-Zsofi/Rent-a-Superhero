@@ -10,16 +10,19 @@ function Header() {
       </div>
       <nav>
           <p>
-            <Link to="/admin/home">Home</Link>
+            <Link to="/user/home">Home</Link>
           </p>
           <p>
-            <Link to="/admin/superheroes">Superheroes</Link>
+            <Link to="/user/superheroes">Superheroes</Link>
           </p>
           <p>
-            <Link to="/admin/about">About us</Link>
+            <Link to="/user/about">About us</Link>
           </p>
           <p>
-            <Link to="/admin/contacts">Contact info</Link>
+            <Link to="/user/contact">Contact info</Link>
+          </p>
+          <p>
+            <Link to="/user/signup">Signup or Login</Link>
           </p>
       </nav>
     </header>
