@@ -27,7 +27,6 @@ async function upDateAHero(hero) {
 }
 
 
-
 async function handleSubmit(event) {
   event.preventDefault();
   await upDateAHero(hero);
@@ -42,17 +41,17 @@ async function handleSubmit(event) {
         Picture URL:
         <input type="text" value={hero.pictureUrl} onChange={(e) => setHero({...hero, pictureUrl: e.target.value})}/>
         Description:
-        <input type="text" defaultValue={hero.description} onChange={(e) => setHero({...hero, description: e.target.value})}/>    
+        <input type="text" value={hero.description} onChange={(e) => setHero({...hero, description: e.target.value})}/>    
         Gender:
-        <input type="text" defaultValue={hero.gender} onChange={(e) => setHero({...hero, gender: e.target.value})}/>      
+        <input type="text" value={hero.gender} onChange={(e) => setHero({...hero, gender: e.target.value})}/>      
         Status:
-        <input type="text" defaultValue={hero.status} onChange={(e) => setHero({...hero, status: e.target.value})}/>    
+        <input type="text" value={hero.status} onChange={(e) => setHero({...hero, status: e.target.value})}/>    
         Hero Type: 
-        <input type="text" defaultValue={hero.heroType} onChange={(e) => setHero({...hero, heroType: e.target.value})}/>
+        <input type="text" value={hero.heroType} onChange={(e) => setHero({...hero, heroType: e.target.value})}/>
         Rating:
-        <input type="text" defaultValue={hero.rating} onChange={(e) => setHero({...hero, rating: e.target.value})}/>
+        <input type="text" value={hero.rating} onChange={(e) => setHero({...hero, rating: e.target.value})}/>
         Price:
-        <input type="text" defaultValue={hero.price} onChange={(e) => setHero({...hero, price: e.target.value})}/>
+        <input type="text" value={hero.price} onChange={(e) => setHero({...hero, price: e.target.value})}/>
       <button>Save changes</button>
       </div>
     </form>
