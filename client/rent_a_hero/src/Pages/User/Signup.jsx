@@ -1,6 +1,5 @@
 import Header from "./Header"
 import { useState, useEffect } from "react";
-import "./User.css"
 
 export default function Signup() {
 
