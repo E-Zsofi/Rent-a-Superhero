@@ -13,13 +13,13 @@ function Header() {
             <Link to="/user/home">Home</Link>
           </p>
           <p>
-            <Link to="/user/contact">Contact info</Link>
+            <Link to="/user/superheroes">Superheroes</Link>
           </p>
           <p>
             <Link to="/user/about">About us</Link>
           </p>
           <p>
-            <Link to="/user/superheroes">Superheroes</Link>
+            <Link to="/user/contact">Contact info</Link>
           </p>
           <p>
             <Link to="/user/signup">Signup or Login</Link>
