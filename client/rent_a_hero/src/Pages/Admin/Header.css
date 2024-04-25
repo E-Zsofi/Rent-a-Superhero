@@ -44,3 +44,11 @@ h1 {
   font-family: "Avengers";
 }
 
+.welcome{
+    color:black;
+    background-color: #eee6e0;
+    padding: 50px;
+    border: 1px solid #888;
+    border-radius: 8px;
+}
+

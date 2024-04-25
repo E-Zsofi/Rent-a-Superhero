@@ -1,33 +1,38 @@
-body{
+body {
 
   background-image: url("/src/Pages/Admin/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: scroll;
-  
+
 }
-.logo{
+
+.logo {
   size: 41px;
 }
-nav{
+
+nav {
   display: flex;
 }
+
 nav p {
   margin-right: 120px
 }
+
 nav p {
   margin-left: 40px
 }
+
 header {
   display: flex;
   justify-content: center;
   font-family: "Avengers";
-  font-size:larger;
+  font-size: larger;
 }
 
 .logo {
-  width: 300px; 
+  width: 300px;
   height: auto;
   /* object-fit: cover;
   mix-blend-mode: darken; */
@@ -45,10 +50,14 @@ header {
 }
 
 .welcome {
-  
+  color: black;
+  background-color: #eee6e0;
+  padding: 50px;
+  border: 1px solid #888;
+  border-radius: 8px;
 }
+
 
 h1 {
   font-family: "Avengers";
 }
-
