@@ -12,6 +12,7 @@ import UserAboutUs from "./Pages/User/UserAboutUs.jsx";
 import UserSuperhero from "./Pages/User/UserSuperhero.jsx";
 import ContactUs from "./Pages/Admin/ContactUs.jsx";
 import Messages from "./Pages/Admin/Messages.jsx";
+import UserCart from "./Pages/User/UserCart.jsx";
 
 import EditSuperhero from "./Pages/Admin/EditSuperhero.jsx";
 
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
   {
     path: "/admin/messages",
     element: <Messages/>
+  },
+  {
+    path: "/cart",
+    element: <UserCart/>
   }
 ]);
 
