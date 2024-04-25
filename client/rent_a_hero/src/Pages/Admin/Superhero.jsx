@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "./Header";
 import "./Superhero.css";
 import { Link } from "react-router-dom";
-import EditSuperhero from "./EditSuperhero";
+
 
 function ShowSuperheroes() {
   const [allHeroes, setAllHeroes] = useState([]);

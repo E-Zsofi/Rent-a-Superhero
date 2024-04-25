@@ -10,7 +10,7 @@ const heroSchema = new Schema({
   status: String,
   heroType: String,
   rating: String,
-  price: String,
+  price: Number,
 }, { collection: 'heroes' });
 
 const Hero = model('Hero', heroSchema);

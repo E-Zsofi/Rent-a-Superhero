@@ -24,6 +24,9 @@ function Header() {
           <p>
             <Link to="/user/signup">Signup or Login</Link>
           </p>
+          <p>
+            <Link to="/cart">Cart 🛒</Link>
+          </p>
       </nav>
     </header>
   );

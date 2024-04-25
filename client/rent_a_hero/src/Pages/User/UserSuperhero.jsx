@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import Header from "./Header";
-import { Link } from "react-router-dom";
 import "./UserSuperhero.css";
-
 
 function ShowSuperheroes() {
   const [allHeroes, setAllHeroes] = useState([]);
+  const [cartCounter, setCartCounter] = useState(0);
 
   useEffect(() => {
     async function fetchSuperheroes() {
@@ -15,6 +14,26 @@ function ShowSuperheroes() {
     }
     fetchSuperheroes();
   }, []);
+
+ 
+    async function fetchCartHeroes() {
+      const response = await fetch("/api/cart");
+      const data = await response.json();
+      setCartCounter(data.length);
+    }
+
+  async function fetchCart(hero) {
+    console.log(hero)
+    const response = await fetch("/api/cart", {
+       method: "POST",
+       headers: {
+         "Content-type": "application/json"
+       },
+       body: JSON.stringify(hero)
+     })
+     const responseData = await response.json();
+     await fetchCartHeroes();
+   }
 
   return (
     <>
@@ -36,10 +55,8 @@ function ShowSuperheroes() {
               <p>Status: {hero.status}</p>
               <p>Hero Type: {hero.heroType}</p>
               <p>Rating: {hero.rating}</p>
-              <p>Price: {hero.price}</p>
-              <Link to={`/admin/cart/${hero._id}`}>
-              <button>Add to cart</button>
-              </Link>
+              <p>Price: {hero.price}</p>              
+              <button onClick={() => fetchCart(hero)}>Add to cart</button>   
             </div>
           ))}
         </div>

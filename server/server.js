@@ -2,11 +2,10 @@ import mongoose from 'mongoose';
 import express from 'express';
 import Hero from "./model/Hero.js";
 import User from "./model/User.js"
+import Cart from './model/Cart.js';
 
 const app = express();
 app.use(express.json());
-
-
 
 async function main() {
   await mongoose.connect('mongodb+srv://bencematuz1:Hero12345@rentahero.rvghajp.mongodb.net/Superheros');
@@ -26,6 +25,12 @@ async function main() {
     res.json(allHeroes);
   })
 
+  app.get("/api/cart", async (req, res) => {
+    const cartHeroes = await Cart.find({});
+    res.json(cartHeroes);
+  })
+  
+
   app.post("/api/user", async (req, res) => {
     try {
       const username = req.body.signupUsername;
@@ -42,6 +47,28 @@ async function main() {
       console.error(error);
     }
   })
+ 
+
+  app.post("/api/cart", async (req, res) => {
+    try {
+    const name = req.body.name;
+    const price = req.body.price;
+    const pictureUrl = req.body.pictureUrl;
+    console.log(req.body)
+
+    const cartHero = new Cart({
+      name,
+      price,
+      pictureUrl
+    })
+    console.log(cartHero)
+    const createdCartHero = await cartHero.save();
+    res.json(createdCartHero)
+    } catch (error) {
+    console.error(error);
+    }
+    })
+
   
   app.post("/api/hero", async (req, res) => {
     try{
@@ -83,8 +110,7 @@ async function main() {
     }
   })
   
-
-
+ 
 
   app.listen(3000, () => {
     console.log('Server is running on port 3000');
