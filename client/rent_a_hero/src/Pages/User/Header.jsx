@@ -31,7 +31,6 @@ console.log(loggedInUser);
       <div>
         <img className="logo" src={logo3} alt="Business Logo" />
       </div>
-      <nav>
         {loggedInUser &&
         <div className="log">
           <div className="hello">
@@ -41,24 +40,31 @@ console.log(loggedInUser);
         </div>
         {loggedInUser && (<div><button onClick={handleLogout}>Logout</button></div>)}
         </div>}
+      <nav>
+        <div>
           <p>
             <Link to="/user/home">Home</Link>
           </p>
           <p>
             <Link to="/user/superheroes">Superheroes</Link>
           </p>
+          </div>
+          <div>
           <p>
             <Link to="/user/about">About us</Link>
           </p>
           <p>
             <Link to="/user/contact">Contact info</Link>
           </p>
+          </div>
+          <div>
           <p>
             <Link to="/user/signup">Signup or Login</Link>
           </p>
           <p>
             <Link to="/cart">Cart 🛒</Link>
           </p>
+          </div>
       </nav>
     </header>
     </>
