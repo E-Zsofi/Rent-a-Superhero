@@ -21,6 +21,9 @@ function Header() {
           <p>
             <Link to="/admin/contacts">Contact info</Link>
           </p>
+          <p>
+            <Link to="/admin/messages">Messages</Link>
+          </p>
       </nav>
     </header>
   );
