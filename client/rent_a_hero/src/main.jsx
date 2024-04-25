@@ -11,6 +11,7 @@ import UserContactUs from "./Pages/User/UserContactUs.jsx";
 import UserAboutUs from "./Pages/User/UserAboutUs.jsx";
 import UserSuperhero from "./Pages/User/UserSuperhero.jsx";
 import ContactUs from "./Pages/Admin/ContactUs.jsx";
+import Messages from "./Pages/Admin/Messages.jsx";
 
 import EditSuperhero from "./Pages/Admin/EditSuperhero.jsx";
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
     element: <UserContactUs />,
   },
   {
+    path: "/user/signup",
+    element: <Signup/>
+  },
+  {
     path: "/admin",
     element: <HomePage />,
   },
@@ -52,16 +57,16 @@ const router = createBrowserRouter([
     element: <Superhero />,
   },
   {
-    path: "/user/signup",
-    element: <Signup/>
-  },
-  {
     path: "/admin/contacts",
     element: <ContactUs/>
   },
   {
     path: "/admin/edit/:id",
     element: <EditSuperhero/>
+  },
+  {
+    path: "/admin/messages",
+    element: <Messages/>
   }
 ]);
 

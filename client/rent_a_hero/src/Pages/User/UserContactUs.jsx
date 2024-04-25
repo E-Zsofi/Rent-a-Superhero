@@ -1,37 +1,88 @@
 import Header from "./Header";
 import { Link } from "react-router-dom";
 import map from "./map.png";
+import { useState } from "react";
+
 
 
 function ShowContacts() {
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  async function handleSubmitMessage(event) {
+    event.preventDefault();
+
+    const userMessage = {
+      name,
+      phoneNumber,
+      email,
+      message,
+    };
+
+    const response = await fetch("/api/message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userMessage),
+    });
+
+    await response.json();
+    setName("");
+    setPhoneNumber("");
+    setEmail("");
+    setMessage("");
+
+  }
+
 
   return (
     <>
       <div>
         <Header></Header>
       </div>
-      <div className="sendMessage">
-        <h1>Send us a message</h1>
-        <form>
-          <label>
-            Your name:
-            <input type="text" />
-          </label>
-          <label>
-            Phone number:
-            <input type="number" />
-          </label>
-          <label>
-            Email adress:
-            <input type="email" />
-          </label>
-          <label>
-            Your message:
-            <input type="text" />
-          </label>
-          <button type="submit">Send</button>
-        </form>
-      </div>
+
+      <h1>Send us a message</h1>
+
+      <form className="MessageForm" onSubmit={handleSubmitMessage}>
+
+        <label htmlFor="name">Your name:</label>
+        <input type="text"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+          name="name"
+          id="name"
+        />
+
+        <label htmlFor="phoneNumber">Phone number:</label>
+        <input type="number"
+          value={phoneNumber}
+          onChange={(event) => setPhoneNumber(event.target.value)}
+          name="phoneNumber"
+          id="phoneNumber"
+        />
+
+        <label htmlFor="email">Email adress:</label>
+        <input type="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          name="email"
+          id="email"
+        />
+
+        <label htmlFor="message">Your message:</label>
+        <input type="text"
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
+          name="message"
+          id="message"
+        />
+
+        <button type="submit">Send message</button>
+      </form>
+
       <br></br>
       <div className="informations">
         <div>
