@@ -3,7 +3,6 @@ import Header from "./Header";
 import "./Superhero.css";
 import { Link } from "react-router-dom";
 
-
 function ShowSuperheroes() {
   const [allHeroes, setAllHeroes] = useState([]);
   const [name, setName] = useState("");
@@ -15,13 +14,25 @@ function ShowSuperheroes() {
   const [status, setStatus] = useState("");
   const [heroType, setHeroType] = useState("");
   const [price, setPrice] = useState("");
+  
+  async function fetchSuperheroes() {
+    const response = await fetch("/api/hero");
+    const data = await response.json();
+    setAllHeroes(data);
+  }
+
+  const deleteHero = async (name) => {
+    const res = await fetch(`/api/hero/${name}`, { method: "DELETE" });
+    fetchSuperheroes()
+    await res.json();
+  };
+  
+  function onClickDelete(name) {
+    deleteHero(name)
+    fetchSuperheroes()
+  }
 
   useEffect(() => {
-    async function fetchSuperheroes() {
-      const response = await fetch("/api/hero");
-      const data = await response.json();
-      setAllHeroes(data);
-    }
     fetchSuperheroes();
   }, []);
 
@@ -38,33 +49,37 @@ function ShowSuperheroes() {
       rating,
       price,
     };
-    try {
-      const response = await fetch("/api/hero", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      const responseData = await response.json();
-      setName("");
-      setDescription("");
-      setPictureUrl("");
-      setAbilities("");
-      setGender("");
-      setRating("");
-      setStatus("");
-      setHeroType("");
-      setPrice("");
-    } catch (error) {
-      console.error("Error:", error);
-    }
+
+    const response = await fetch("/api/hero", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    await response.json();
+    
+    fetchSuperheroes()
+
+    setName("");
+    setDescription("");
+    setPictureUrl("");
+    setAbilities("");
+    setGender("");
+    setRating("");
+    setStatus("");
+    setHeroType("");
+    setPrice("");
+    
   }
+
 
   return (
     <>
+      <Header></Header>
       <div>
-        <form onSubmit={handleSubmitNewHero}>
+        <form name={"submitNewHero"} onSubmit={handleSubmitNewHero}>
           <label>
             Name:
             <input
@@ -139,7 +154,7 @@ function ShowSuperheroes() {
           </label>
           <button type="submit">Submit new Superhero</button>
         </form>
-        <Header></Header>
+
         <div className="heroes">
           {allHeroes.map((hero, index) => (
             <div key={index} className="HeroContainer">
@@ -158,8 +173,11 @@ function ShowSuperheroes() {
               <p>Rating: {hero.rating}</p>
               <p>Price: {hero.price}</p>
               <Link to={`/admin/edit/${hero._id}`}>
-              <button>Edit Superhero</button>
+                <button>Edit Superhero</button>
               </Link>
+              <button type="button" onClick={() => onClickDelete(hero.name)}>
+                Delete
+              </button>
             </div>
           ))}
         </div>
