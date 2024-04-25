@@ -54,6 +54,46 @@ async function main() {
     }
   })
 
+  app.get("/api/user/:name", async (req, res, next) => {
+    try {
+      const user = await User.findOneAndUpdate(
+        {username: req.params.name},
+        { isLoggedIn: true },
+        { new: true}
+        )
+      console.log(user);
+      return res.json(user);
+
+    } catch (err) {
+      return next(err);
+    }
+  })
+
+  app.get("/api/logout/:name", async (req, res, next) => {
+    try {
+      const user = await User.findOneAndUpdate(
+        {username: req.params.name},
+        { isLoggedIn: false },
+        { new: true}
+        )
+      console.log(user);
+      return res.json(user);
+
+    } catch (err) {
+      return next(err);
+    }
+  })
+
+  app.get("/api/logged-in-user", async (req, res, next) => {
+    try {
+      const loggedUser = await User.findOne({isLoggedIn: true})
+      console.log(loggedUser);
+      return res.json(loggedUser);
+    } catch (error) {
+      return next(error)
+    }
+  })
+
 
   app.post("/api/cart", async (req, res) => {
     try {

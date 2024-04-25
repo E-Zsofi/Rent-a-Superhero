@@ -1,0 +1,67 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    color: black;
+  }
+  
+  .form {
+    text-align: center;
+  }
+
+  ul {
+    text-align: center;
+  }
+
+  .h4-div {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    background-color: rgba(81, 83, 222, 0.678);
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 100px;
+    height: 50px;
+    margin: auto; /* Center horizontally */
+  }
+
+  .reg-log-block {
+    text-align: center;
+    background-color: rgba(135, 136, 222, 0.678); /* Choose your desired background color */
+    border-radius: 10px;
+    border: 2px solid black; /* Border color and width */
+    padding: 10px; /* Add padding inside the frame */
+    /* Or, if you want to use a background image */
+    /* background-image: url('path/to/your/image.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center center; */
+    /* background-repeat: no-repeat; */
+  }
+
+  .button-div {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .logged-in {
+    text-align: center;
+    background-color: rgba(9, 239, 9, 0.757);
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 10px;
+    width: 200px;
+    margin-bottom: 200px; /* Add margin-bottom to create space between the logged-in message and the signup/login block */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+  }
+
+
+
+  
+  
