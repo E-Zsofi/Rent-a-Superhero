@@ -5,6 +5,7 @@ const { Schema, model } = mongoose;
 const userSchema = new Schema({
     username: String,
     email: String,
+    isLoggedIn: Boolean
 }, { collection: 'users'});
 
 const User = model('user', userSchema);
