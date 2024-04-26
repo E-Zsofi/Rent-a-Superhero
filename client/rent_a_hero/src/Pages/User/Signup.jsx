@@ -9,6 +9,7 @@ export default function Signup() {
   const [signupEmail, setSignupEmail] = useState("");
   const [loginUsername, setLoginUsername] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [noUser, setNoUser] = useState(false)
   const usenavigate = useNavigate();
 
   async function handleSignup(event) {
@@ -40,7 +41,7 @@ export default function Signup() {
     event.preventDefault();
     const response = await fetch(`/api/user/${loginUsername}?isLoggedIn=true}`);
     const fetchedUser = await response.json();
-    fetchedUser && setIsLoggedIn(true);
+    fetchedUser ? setIsLoggedIn(true) : setNoUser(true);
   }
 
 
