@@ -1,6 +1,6 @@
 # Rent-a-Superhero
 
-Rent-a-Superhero is a fullstack JavaScript application. The frontend runs on a Vite server, while the backend is powered by Express.js. This project allows users to browse and rent superheroes as their personal bodíguards. 
+Rent-a-Superhero is a fullstack JavaScript application. The frontend runs on a Vite server, while the backend is powered by Express.js. This project allows users to browse and rent superheroes as their personal bodyguards. 
 
 ## Features
 - Superhero listing with details
@@ -21,16 +21,26 @@ Rent-a-Superhero is a fullstack JavaScript application. The frontend runs on a V
 ## Installation
 
 1. Clone the repository:
+   
    git clone https://github.com/E-Zsofi/Rent-a-Superhero.git
    cd Rent-a-Superhero
-2. Install backend dependencies:
+   
+3. Install backend dependencies:
+   
    cd server
    npm install
-3. Install frondend dependencies:
+   
+5. Install frondend dependencies:
+   
    cd ../client/rent_a_hero
    npm install
-4. Start the backend server:
+   
+7. Start the backend server:
+   
    npm run dev
-5. Start the frondend server:
+   
+9. Start the frondend server:
+    
    npm run dev
-6. The Vite development server will run on http://localhost:5173
+   
+11. The Vite development server will run on http://localhost:5173
