@@ -26,9 +26,14 @@ Rent-a-Superhero is a fullstack JavaScript application. The frontend runs on a V
    cd Rent-a-Superhero
    
 3. Install backend dependencies:
+   
+   Direct to the server folder:
    ```
-   Direct to the server folder: cd server
-   Run the following command: npm install
+   cd server
+   ```
+   Run the following command:
+   ```
+   npm install
    
 5. Install frondend dependencies:
    Open another terminal.
