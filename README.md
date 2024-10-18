@@ -27,20 +27,20 @@ Rent-a-Superhero is a fullstack JavaScript application. The frontend runs on a V
    
 3. Install backend dependencies:
    
-   cd server
-   npm install
+   Direct to the server folder: cd server
+   Run the following command: npm install
    
 5. Install frondend dependencies:
-   
-   cd ../client/rent_a_hero
-   npm install
+   Open another terminal.
+   Direct to the client folder: cd client -> cd rent_a_hero
+   Run the following command: npm install
    
 7. Start the backend server:
    
-   npm run dev
+   In the backend's terminal, run the following command: npm run dev
    
 9. Start the frondend server:
     
-   npm run dev
+   In the client's terminal, run the following command: npm run dev
    
 11. The Vite development server will run on http://localhost:5173
